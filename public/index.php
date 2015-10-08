@@ -25,4 +25,8 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 
-$app->run();
+/*Don't know why I needed to do this to get Lumen to recognize the routes properly.*/
+$request = Illuminate\Http\Request::capture();
+
+$app->run($request);
+
